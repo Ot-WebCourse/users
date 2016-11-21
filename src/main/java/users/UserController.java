@@ -34,6 +34,14 @@ public class UserController {
 			  	User user = usersService.getUserByLogin(username);
 				if(user!=null){
 	            model.addAttribute("user", user);
+	            if(user.getHasAvatar()==true){
+	            	model.addAttribute("avatarUrl", "/image/"+user.getLogin()+"_avatar");
+	            }
+	            else{
+	            	model.addAttribute("avatarUrl", "http://placehold.it/128x128");
+	            }
+	            
+	            
 				model.addAttribute("location", usersService.getUserLocation(userAgent));
 		        
 		        return "user_page";

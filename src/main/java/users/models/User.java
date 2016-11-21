@@ -17,6 +17,8 @@ public class User  {
 	
 	private String password;
 	
+	private Boolean hasAvatar;
+	
 	private List<Post> posts = new ArrayList<>();
 	
 	public User() {
@@ -27,6 +29,15 @@ public class User  {
 		this.login = login;
 		this.email = email;
 		this.password = password;
+		hasAvatar=false;
+	}
+
+	public Boolean getHasAvatar() {
+		return hasAvatar;
+	}
+
+	public void setHasAvatar(Boolean hasAvatar) {
+		this.hasAvatar = hasAvatar;
 	}
 
 	public Long getId() {
